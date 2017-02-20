@@ -8,8 +8,8 @@ Example:
 chown -R apache files/
 
 You also might need to edit the index.php file so that the <b>.sh</b> file's directories are correct
+
 Example:
-<?php
 
 if ($_GET['run']) {
   # This code will run if ?run=true is set.
@@ -19,7 +19,7 @@ if ($_GET['clear']) {
   # This code will run if ?clear=true is set.
   shell_exec('<b>/var/www/html/PHP-Runs-Shell/clear.sh'</b>);
 }
-?>
+
 
 <b>Note: without tweaking your selinux settings you will have to disable it for this to work</b>
 
