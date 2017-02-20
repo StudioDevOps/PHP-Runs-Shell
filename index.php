@@ -5,12 +5,11 @@ if ($_GET['run']) {
   shell_exec('/var/www/html/test.sh');
 }
 if ($_GET['clear']) {
-  # This code will run if ?run=true is set.
+  # This code will run if ?clear=true is set.
   shell_exec('/var/www/html/clear.sh');
 }
 ?>
 
-<!-- This link will add ?run=true to your URL, myfilename.php?run=true -->
 <br>
 <center>
 <a href="?run=true">Click here</a>
