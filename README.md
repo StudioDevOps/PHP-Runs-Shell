@@ -7,17 +7,22 @@ Make sure that the web server application recursively owns the "files" directory
 Example:
 chown -R apache files/
 
+If you are using something like AWS OpsWorks you will end up needing to change the mode to 664 for files in the "files" directory
+
+Example:
+chmod 664 files/*
+
 You also might need to edit the index.php file so that the <b>.sh</b> file's directories are correct
 
 Example:
 
 if ($_GET['run']) {
   # This code will run if ?run=true is set.
-  shell_exec(<b>'/var/www/html/PHP-Runs-Shell/test.sh'</b>);
+  shell_exec(<b>'./test.sh'</b>);
 }
 if ($_GET['clear']) {
   # This code will run if ?clear=true is set.
-  shell_exec('<b>/var/www/html/PHP-Runs-Shell/clear.sh'</b>);
+  shell_exec('<b>./clear.sh'</b>);
 }
 
 
@@ -26,7 +31,3 @@ if ($_GET['clear']) {
 Example (at your own risk):
   To Temporarily disable selinux:
     setenforce 0
-
-
-
-
