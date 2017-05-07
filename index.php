@@ -2,11 +2,11 @@
 
 if ($_GET['run']) {
   # This code will run if ?run=true is set.
-  shell_exec('/var/www/html/PHP-Runs-Shell/test.sh');
+  shell_exec('./test.sh');
 }
 if ($_GET['clear']) {
   # This code will run if ?clear=true is set.
-  shell_exec('/var/www/html/PHP-Runs-Shell/clear.sh');
+  shell_exec('./clear.sh');
 }
 ?>
 
